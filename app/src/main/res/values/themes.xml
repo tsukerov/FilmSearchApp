@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MyFinalProject" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#9c27b0</item>
+        <item name="colorPrimaryVariant">#6a0080</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#80cbc4</item>
+        <item name="colorSecondaryVariant">#4f9a94</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <declare-styleable name="RatingDonutView">
+        <attr name="progress" format="integer" />
+        <attr name="stroke" format="float" />
+    </declare-styleable>
+</resources>
