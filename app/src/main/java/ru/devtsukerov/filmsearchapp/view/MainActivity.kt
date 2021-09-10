@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import ru.devtsukerov.filmsearchapp.databinding.ActivityMainBinding
 import ru.devtsukerov.filmsearchapp.*
 import ru.devtsukerov.filmsearchapp.domain.Film
+import ru.devtsukerov.filmsearchapp.view.rv_adapters.*
+import ru.devtsukerov.filmsearchapp.view.fragments.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var filmsAdapter: FilmListRecyclerAdapter

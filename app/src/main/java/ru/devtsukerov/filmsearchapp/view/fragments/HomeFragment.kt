@@ -1,4 +1,4 @@
-package ru.devtsukerov.filmsearchapp
+package ru.devtsukerov.filmsearchapp.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,8 @@ import ru.devtsukerov.filmsearchapp.databinding.FragmentHomeBinding
 import ru.devtsukerov.filmsearchapp.utils.AnimationHelper
 import ru.devtsukerov.filmsearchapp.view.MainActivity
 import ru.devtsukerov.filmsearchapp.domain.Film
+import ru.devtsukerov.filmsearchapp.view.rv_adapters.*
+import ru.devtsukerov.filmsearchapp.R
 
 import java.util.*
 

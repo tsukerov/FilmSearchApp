@@ -1,4 +1,4 @@
-package ru.devtsukerov.filmsearchapp
+package ru.devtsukerov.filmsearchapp.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
