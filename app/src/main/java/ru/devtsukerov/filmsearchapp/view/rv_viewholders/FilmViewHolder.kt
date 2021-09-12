@@ -1,4 +1,4 @@
-package ru.devtsukerov.filmsearchapp
+package ru.devtsukerov.filmsearchapp.view.rv_viewholders
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

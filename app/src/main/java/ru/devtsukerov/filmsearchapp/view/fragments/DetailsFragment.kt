@@ -1,4 +1,4 @@
-package ru.devtsukerov.filmsearchapp
+package ru.devtsukerov.filmsearchapp.view.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.devtsukerov.filmsearchapp.databinding.FragmentDetailsBinding
 import ru.devtsukerov.filmsearchapp.domain.Film
-
+import ru.devtsukerov.filmsearchapp.R
 
 class DetailsFragment : Fragment() {
     lateinit var film: Film

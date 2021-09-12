@@ -1,4 +1,4 @@
-package ru.devtsukerov.filmsearchapp
+package ru.devtsukerov.filmsearchapp.view.rv_adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,6 +6,9 @@ import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.film_item.view.*
 import ru.devtsukerov.filmsearchapp.domain.Film
+import ru.devtsukerov.filmsearchapp.view.rv_viewholders.FilmViewHolder
+import ru.devtsukerov.filmsearchapp.view.rv_adapters.*
+import ru.devtsukerov.filmsearchapp.R
 
 class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

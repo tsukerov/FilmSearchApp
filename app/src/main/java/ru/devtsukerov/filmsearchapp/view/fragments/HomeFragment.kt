@@ -1,4 +1,4 @@
-package ru.devtsukerov.filmsearchapp
+package ru.devtsukerov.filmsearchapp.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,31 +6,37 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.devtsukerov.filmsearchapp.databinding.FragmentHomeBinding
 import ru.devtsukerov.filmsearchapp.utils.AnimationHelper
 import ru.devtsukerov.filmsearchapp.view.MainActivity
 import ru.devtsukerov.filmsearchapp.domain.Film
+import ru.devtsukerov.filmsearchapp.view.rv_adapters.*
+import ru.devtsukerov.filmsearchapp.R
+import ru.devtsukerov.filmsearchapp.viewmodel.HomeFragmentViewModel
 
 import java.util.*
 
 class HomeFragment : Fragment() {
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
     private lateinit var binding: FragmentHomeBinding
-    val filmsDataBase = listOf(
-        Film("Back To The Future", R.drawable.backtothefuture, "This should be a description",8.5f),
-        Film("Fight Club", R.drawable.fightclub, "This should be a description",8.8f),
-        Film("Inception", R.drawable.inception, "This should be a description",8.8f),
-        Film("Matrix", R.drawable.matrix, "This should be a description",8.7f),
-        Film("Pulp Fiction", R.drawable.pulpfiction, "This should be a description",8.9f),
-        Film(
-            "Shawshank Redemption",
-            R.drawable.shawshank_redemption,
-            "This should be a description",9.3f
-        ),
-        Film("Terminator 2", R.drawable.terminator2, "This should be a description",8.5f),
-        Film("Toy Story", R.drawable.toystory, "This should be a description",8.3f)
-    )
+
+    private val viewModel by lazy {
+        ViewModelProvider.NewInstanceFactory().create(HomeFragmentViewModel::class.java)
+    }
+    private var filmsDataBase = listOf<Film>()
+        //Используем backing field
+        set(value) {
+            //Если придет такое же значение, то мы выходим из метода
+            if (field == value) return
+            //Если пришло другое значение, то кладем его в переменную
+            field = value
+            //Обновляем RV адаптер
+            filmsAdapter.addItems(field)
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
@@ -95,6 +101,10 @@ class HomeFragment : Fragment() {
                     filmsAdapter.addItems(result)
                     return true
             }
+        })
+
+        viewModel.filmsListLiveData.observe(viewLifecycleOwner, Observer<List<Film>> {
+            filmsDataBase = it
         })
     }
 
