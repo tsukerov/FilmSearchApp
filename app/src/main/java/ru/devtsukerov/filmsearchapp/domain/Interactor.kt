@@ -8,11 +8,12 @@ import ru.devtsukerov.filmsearchapp.utils.Converter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import ru.devtsukerov.filmsearchapp.data.API
 import ru.devtsukerov.filmsearchapp.data.ApiConstants
 
 class Interactor(private val repo: MainRepository, private val retrofitService: TmdbApi) {
     fun getFilmsFromApi(page: Int, callback: HomeFragmentViewModel.ApiCallback) {
-        retrofitService.getFilms(ApiConstants.API_KEY, "ru-RU", page).enqueue(object : Callback<TmdbResultsDto> {
+        retrofitService.getFilms(API.API_KEY, "ru-RU", page).enqueue(object : Callback<TmdbResultsDto> {
             override fun onResponse(call: Call<TmdbResultsDto>, response: Response<TmdbResultsDto>) {
                 //При успехе мы вызываем метод передаем onSuccess и в этот коллбэк список фильмов
                 callback.onSuccess(Converter.convertApiListToDtoList(response.body()?.results))
