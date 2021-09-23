@@ -4,13 +4,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ru.devtsukerov.filmsearchapp.App
 import ru.devtsukerov.filmsearchapp.domain.*
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 
 
-class HomeFragmentViewModel : ViewModel() {
+class HomeFragmentViewModel : ViewModel(), KoinComponent {
     val filmsListLiveData = MutableLiveData<List<Film>>()
 
 
-    private var interactor: Interactor = App.instance.interactor
+    private val interactor: Interactor by inject()
 
     init {
         interactor.getFilmsFromApi(1, object : ApiCallback {
