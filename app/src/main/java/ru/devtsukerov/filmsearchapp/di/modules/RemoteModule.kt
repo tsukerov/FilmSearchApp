@@ -8,6 +8,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 import java.util.concurrent.TimeUnit
+import ru.devtsukerov.filmsearchapp.data.TmdbApi
+import ru.devtsukerov.filmsearchapp.data.ApiConstants
+import ru.devtsukerov.filmsearchapp.BuildConfig
 
 @Module
 class RemoteModule {
