@@ -5,6 +5,7 @@ import ru.devtsukerov.filmsearchapp.di.modules.DatabaseModule
 import ru.devtsukerov.filmsearchapp.di.modules.DomainModule
 import ru.devtsukerov.filmsearchapp.di.modules.RemoteModule
 import ru.devtsukerov.filmsearchapp.viewmodel.HomeFragmentViewModel
+import ru.devtsukerov.filmsearchapp.viewmodel.SettingsFragmentViewModel
 import javax.inject.Singleton
 
 @Singleton
@@ -18,4 +19,5 @@ import javax.inject.Singleton
 )
 interface AppComponent {
     fun inject(homeFragmentViewModel: HomeFragmentViewModel)
+    fun inject(settingsFragmentViewModel: SettingsFragmentViewModel)
 }
